@@ -11,7 +11,7 @@ let questionBox = document.querySelector("#title-header")
 let flashcardTitle = document.querySelector("span")
 let answers = document.querySelector(".answer")
 let contentBoxItem = document.querySelector(".contentBox")
-let contentItems = document.querySelectorAll(".content-item")
+let contentItems = document.querySelector(".content-item")
 let incorrectAnswerResponse = document.querySelector(".incorrectAnswerResponse")
 var questionAndAnswerIndex = 0;
 
@@ -210,7 +210,7 @@ let assignAnswerFunc = () => {
         temp = document.createElement("div")
         temp.className = "content-item"
         temp.setAttribute('id', i)
-        // temp.classList.add("hidden")
+        temp.classList.add("hidden")
         temp.innerHTML = flashcardAnswers[i]
         contentBoxItem.appendChild(temp)
         // myAnimationFunc(temp)
@@ -293,43 +293,76 @@ let checkAnswer = (guess) => {
     //     if (guess === questionBank[questionAndAnswerIndex].answers[i].toLowerCase().replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, '')) {
     //         contentItems.forEach((contentItem) => {
     //             let answerNum = parseInt(contentItem.id);
-    //             if (answerNum === 1)
-    //                 contentItem.classList.remove("hidden");
+    //             if (answerNum = i)
+    //                 // contentItem.classList.remove("hidden");
+    //                 console.log("true")
     //         })
     //         return true
-    //     }
+    //     }else{return false}
     // }
-    // return false;
 
-    let userInputAnswer = userAnswer;
-    let questionIndex = Object.values(questionBank[questionAndAnswerIndex]);
-    let question = questionIndex;
-    if(question.answers.includes(userInputAnswer)){
-        console.log("true")
-        return true;
+    // let answerArray = Object.values(questionBank[questionAndAnswerIndex].answers)
+
+    // if (questionBank[questionAndAnswerIndex].answers.some((answer) => answer === guess)) {
+    //     console.log("true")
+    //     console.log(questionBank[questionAndAnswerIndex].answers[questionAndAnswerIndex])
+    //     return true;
+    // } else {
+    //     console.log(typeof answerArray)
+    //     console.log(answerArray)
+    //     console.log(typeof questionBank)
+
+    //     return false
+    // }
+
+
+
+  
+    let answerHolder = Object.values(questionBank[questionAndAnswerIndex].answers)
+    //check if the user's answer is in the array
+    let validateUserInput = answerHolder.some((answer) => answer = userAnswer)
+    console.log(answerHolder)
+    //log to console the value
+    console.log(validateUserInput)
+
+    //validation
+    if (validateUserInput === true) {
+        return true
+    } else {
+        return false
     }
-    return false
+
 }
+
 
 let flag;
 console.log(flag)
 submitBtn.addEventListener('click', () => {
     console.log("submitted")
     let guess = userAnswer.value.toLowerCase().replace(/[&\/\\#,+()$~%.'":*?<>{}1234567890]/g, '')
-    console.log(userAnswer.value)
+    console.log(guess.value)
 
     flag = checkAnswer(guess)
     console.log(flag)
 
     if (flag === true) {
         incorrectAnswerResponse.classList.add("hidden")
+        let answerId = parseInt(contentItems.id)
+        if (answerID = i) {
+            contentItem.classList.remove("hidden");
+
+        }
+
+        console.log("flag is true")
     }
 
-    if(flag === false){
+    if (flag === false) {
         incorrectAnswerResponse.classList.remove("hidden")
+        console.log("flag is false")
     }
 
     userAnswer.value = ""
 })
 
-
+console.log(questionBank[questionAndAnswerIndex].answers.some((answer) => answer === userAnswer))
+// .replace(/[&\/\\#,+()$~%.'":*?<>{}1234567890]/g, '')
