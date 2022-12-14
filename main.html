@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bible Game</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+    <!-- Creating the icon -->
+    <div class="icon">
+        <h1>-Bible Game-</h1>
+        <h3>Family Feud Edition</h3>
+    </div>
+
+
+    <!-- Team Score  -->
+    <div class="teamScore">
+
+        <div id="teamOne">
+
+            <div class="teamOneHeader">
+                <h2> Group 1 </h2>
+            </div>
+
+            <div class="teamOneBtn">
+                <div id="teamOneAddBtn">
+                    <button id="OneaddBtn"> + </button>
+                </div>
+                <div id="teamOneScore">
+                    <div class="score">
+                        <input type="number" id="teamOneScoreHeader" readonly="" value="0">
+                    </div>
+                </div>
+                <div id="teamOneMinusBtn">
+                    <button id="OneMinusBtn"> - </button>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="teamTwo">
+
+            <div class="teamTwoBtn">
+                <div id="teamTwoAddBtn">
+                    <button id="TwoaddBtn"> + </button>
+                </div>
+                <div id="teamTwoScore">
+                    <div class="score">
+                        <input type="number" id="teamTwoScoreHeader" readonly="" value="0">
+                    </div>
+                </div>
+                <div id="teamTwoMinusBtn">
+                    <button id="TwoMinusBtn"> - </button>
+                </div>
+            </div>
+            <div class="teamTwoHeader">
+                <h2> Group 2 </h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="title">
+        <h1 id="title-header"></h1>
+    </div>
+
+    <div class="answerBox">
+        <div class="contentBox">
+        </div>
+    </div>
+
+    <div class="otherItems">
+        <p class="hidden incorrectAnswerResponse">Incorrect Answer</p>
+        <input type="text" id="input" >
+        <button class="submitBtn"> <span id="submitText">Submit</span> </button>
+        <button class="prevBtn" ><span>Previous</span></button>
+        <button class="nextBtn" ><span>Next</span></button>
+    </div>
+
+
+
+    <!-- javascript Scripts -->
+    <script src="function.js"></script>
+
+</body>
+
+</html>
